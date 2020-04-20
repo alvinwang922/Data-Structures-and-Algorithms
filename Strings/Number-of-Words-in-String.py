@@ -1,7 +1,6 @@
 # Given a string, "Hello this is a string" write me a method to return the count of words in that string
 # Input: "Hello this is a string" -->  5
 # Caviotte, you cannot use any bulit methods such as split, and no built in functions
-# "         "  "  . . . 2 3 . / = +"
 
 
 def numberOfWords(words):
