@@ -5,7 +5,7 @@
 # (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
 
 # Input:  nums = [4,5,6,7,0,1,2], target = 0, output = 4
-# Input: nums = [4,5,6,7,0,1,2] target = 3 Output: -1
+# Input: nums = [4,5,6,7,0,1,2] target = 3, output: -1
 
 
 def rotatedArraySearch(nums, target):
@@ -22,3 +22,8 @@ def rotatedArraySearch(nums, target):
         return binsearch(arr[left:], target) + left
     else:
         return binsearch(arr[:left], target)
+
+
+print(rotatedArraySearch([[4, 5, 6, 7, 0, 1, 2]], 0))
+print(rotatedArraySearch([[4, 5, 6, 7, 0, 1, 2]], 3))
+print("The array above should be 4 and -1")
