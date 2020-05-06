@@ -20,6 +20,18 @@ class Solution(object):
                 counter = 0
 
 
+# Better solution in O(n) instead of O(nlogn)
+
+class Solution(object):
+    def majorityElement(self, nums):
+        elements = dict()
+        for i in range(len(nums)):
+            elements[nums[i]] = elements.get(nums[i], 0) + 1
+        for key in elements:
+            if elements[key] > len(nums) // 2:
+                return key
+
+
 print(majorityElement([3, 2, 3]))
 print(majorityElement([2, 2, 1, 1, 1, 2, 2]))
 print(majorityElement([1]))
