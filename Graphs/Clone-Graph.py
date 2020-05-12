@@ -10,9 +10,8 @@ class Node(object):
         self.val = val
         self.neighbors = neighbors if neighbors is not None else []
 
+
 # Implemented with BFS
-
-
 class Solution(object):
     def cloneGraph(self, node):
         if not node:
