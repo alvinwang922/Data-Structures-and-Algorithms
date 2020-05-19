@@ -24,7 +24,7 @@ class maxLoot(object):
         return nums[len(nums)-1]
 
 
-print(maxLoot([1, 2, 3, 4, 5]))
-print(maxLoot([7, 1, 1, 8, 1, 9]))
-print(maxLoot([10, 4, 3, 4, 1, 6]))
+print(rob([1, 2, 3, 4, 5]))
+print(rob([7, 1, 1, 8, 1, 9]))
+print(rob([10, 4, 3, 4, 1, 6]))
 print("The values above should be 9, 24, and 20.")
