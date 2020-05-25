@@ -38,6 +38,25 @@ class Solution(object):
         return ways[n-1][m-1]
 
 
+# Another way to solve it with reduced space complexity:
+class Solution(object):
+    def uniquePathsWithObstacles(self, obstacleGrid):
+        """
+        :type obstacleGrid: List[List[int]]
+        :rtype: int
+        """
+        length = len(obstacleGrid[0])
+        dp = [0] * length
+        dp[0] = 1
+        for i in range(len(obstacleGrid)):
+            for j in range(length):
+                if obstacleGrid[i][j] == 1:
+                    dp[j] = 0
+                elif j > 0:
+                    dp[j] += dp[j - 1]
+        return dp[length - 1]
+
+
 print(uniquePathsWithObstacles([[0, 0, 0], [0, 1, 0], [0, 0, 0]]))
 print(uniquePathsWithObstacles([[0, 1, 0], [1, 0, 0], [0, 0, 0]]))
 print(uniquePathsWithObstacles([[1, 0], [0, 0]]))
