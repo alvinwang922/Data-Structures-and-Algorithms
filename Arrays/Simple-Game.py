@@ -22,7 +22,7 @@ def getWinner(gameScores):
 
 
 def main():
-    print(getWinner([true, false, true, false, false, false]))
-    print(getWinner([true, false, true, false, true, false, true]))
-    print(getWinner([true, false]))
+    print(getWinner([True, False, True, False, False, False]))
+    print(getWinner([True, False, True, False, True, False, True]))
+    print(getWinner([True, False]))
     print("The values above should be 2, 1, and 0.")
