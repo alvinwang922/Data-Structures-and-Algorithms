@@ -10,7 +10,7 @@ class Solution:
         res = []
         self.backtrack(nums, [], res)
         return res
-    
+
     def backtrack(self, nums, subset, res):
         res.append(subset)
         for i in range(len(nums)):
@@ -18,7 +18,7 @@ class Solution:
 
 
 print(subsets([]))
-print(subsets([1,2]))
-print(subsets([1,2,3]))
-print("The arrays above should be [], [[1], [2], [1, 2]], and \
+print(subsets([1, 2]))
+print(subsets([1, 2, 3]))
+print("The arrays above should be [[]], [[], [1], [2], [1, 2]], and \
 [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]")
