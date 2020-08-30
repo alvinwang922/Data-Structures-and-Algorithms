@@ -7,10 +7,10 @@ binary representation and return them as an array.
 
 class Solution:
     def countBits(self, num: int):
-        final = [0]
-        while len(final) <= num:
-            final += [i+1 for i in final]
-        return final[:num+1]
+        ans = [0]
+        while len(ans) <= num:
+            ans += [i+1 for i in ans]
+        return ans[:num+1]
 
 
 print(countBits(2))
