@@ -16,23 +16,24 @@ Follow up: Could you do both operations in O(1) time complexity?
 
 
 class Node:
-    def __init__(self, key = None, val = None, freq = 1):
+    def __init__(self, key=None, val=None, freq=1):
         self.key = key
         self.val = val
         self.f = freq
         self.prev = None
         self.next = None
 
+
 class LinkedList:
     def __init__(self):
         self.sent = Node()
         self.sent.next = self.sent.prev = self.sent
         self.size = 0
-    
+
     # number of nodes in the linked list
     def len(self):
         return self.size
-    
+
     # append a node to the end of the linked list
     def append(self, n: Node):
         (last := self.sent.prev).next = n
@@ -40,7 +41,7 @@ class LinkedList:
         n.next = self.sent
         self.sent.prev = n
         self.size += 1
-    
+
     # removes a node, or the front of the linked list if no node provided
     def remove(self, n: Node = None):
         if self.size == 0:
@@ -52,13 +53,14 @@ class LinkedList:
         self.size -= 1
         return n
 
+
 class LFUCache:
     def __init__(self, capacity: int):
-        self.cap = max(0,capacity)
+        self.cap = max(0, capacity)
         self.nodes = {}
         self.freqs = defaultdict(LinkedList)
         self.min_freq = 0
-    
+
     # updates a node's frequency, and updates the min frequency if necessary
     def _update(self, n: Node):
         self.freqs[n.f].remove(n)
@@ -66,7 +68,7 @@ class LFUCache:
             self.min_freq += 1
         n.f += 1
         self.freqs[n.f].append(n)
-        
+
     def get(self, key: int):
         if key not in self.nodes:
             return -1
@@ -82,24 +84,22 @@ class LFUCache:
             return
         if len(self.nodes) >= self.cap:
             del self.nodes[self.freqs[self.min_freq].remove().key]
-        self.nodes[key] = (n := Node(key,value))
+        self.nodes[key] = (n := Node(key, value))
         self.freqs[1].append(n)
         self.min_freq = 1
-        
 
 
 # Your LFUCache object will be instantiated and called as such:
 # obj = LFUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
-
-cache.put(1, 1);
-cache.put(2, 2);
-cache.get(1);       // returns 1
-cache.put(3, 3);    // evicts key 2
-cache.get(2);       // returns -1 (not found)
-cache.get(3);       // returns 3.
-cache.put(4, 4);    // evicts key 1.
-cache.get(1);       // returns -1 (not found)
-cache.get(3);       // returns 3
-cache.get(4);       // returns 4
+cache.put(1, 1)
+cache.put(2, 2)
+cache.get(1)       # returns 1
+cache.put(3, 3)    # evicts key 2
+cache.get(2)       # returns -1 (not found)
+cache.get(3)       # returns 3.
+cache.put(4, 4)    # evicts key 1.
+cache.get(1)       # returns -1 (not found)
+cache.get(3)       # returns 3
+cache.get(4)       # returns 4
