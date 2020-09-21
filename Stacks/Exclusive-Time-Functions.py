@@ -1,6 +1,6 @@
 """
 On a single-threaded CPU, we execute a program containing n 
-functions. Each function has a unique ID between 0 and n-1.
+functions. Each function has a unique ID between 0 and n - 1.
 Function calls are stored in a call stack: when a function 
 call starts, its ID is pushed onto the stack, and when a 
 function call ends, its ID is popped off the stack. The 
