@@ -27,6 +27,16 @@ class Solution(object):
         return minIndex
 
 
+# Faster solution
+class Solution:
+    def firstUniqChar(self, s: str):
+        count = Counter(s)
+        for i in range(len(s)):
+            if count[s[i]] == 1:
+                return i
+        return -1
+
+
 print(firstUniqChar("haha"))
 print(firstUniqChar("beebo"))
 print(firstUniqChar("ilovecoding"))
