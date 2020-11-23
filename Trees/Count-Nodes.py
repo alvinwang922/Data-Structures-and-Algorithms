@@ -32,26 +32,29 @@ class Solution:
         if root.right:
             self.helper(root.right, final)
 
-
-# Definition for a binary tree node.
-# Another solution
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-
-class Solution:
-    def countNodes(self, root: TreeNode):
+    # Another solution
+    def countNodes2(self, root: TreeNode):
         if not root:
             return 0
         else:
             return 1 + self.countNodes(root.left) \
                 + self.countNodes(root.right)
 
+    # Another solution
+    def countNodes3(self, root: TreeNode):
+        if not root:
+            return 0
 
-print(countNodes([1, 2, 3]))
-print(countNodes([1, 2, 3, 4, 5, 6]))
-print(countNodes([1, 2, 3, 4, 5, 6, 7, 8, 9]))
-print("The values above should be 3, 6, and 9.")
+        def dfs(root):
+            if root.left and root.right:
+                return dfs(root.left) + dfs(root.right) + 2
+            elif root.left:
+                return dfs(root.left) + 1
+            else:
+                return 0
+        return dfs(root) + 1
+
+    print(countNodes([1, 2, 3]))
+    print(countNodes([1, 2, 3, 4, 5, 6]))
+    print(countNodes([1, 2, 3, 4, 5, 6, 7, 8, 9]))
+    print("The values above should be 3, 6, and 9.")
