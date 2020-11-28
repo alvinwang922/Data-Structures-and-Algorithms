@@ -55,6 +55,47 @@ class Codec:
         :rtype: TreeNode
         """
 
+    # Another solution
+    class Codec2:
+
+        def serialize(self, root: TreeNode):
+            """Encodes a tree to a single string.
+            """
+            if not root:
+                return ""
+            queue, serialized = [root], []
+            while queue:
+                currNode = queue.pop(0)
+                if currNode:
+                    queue.append(currNode.left)
+                    queue.append(currNode.right)
+                    serialized.append(str(currNode.val))
+                else:
+                    serialized.append("None")
+            return " ".join(serialized)
+
+        def deserialize(self, data: str):
+            """Decodes your encoded data to tree.
+            """
+            if not data:
+                return None
+            data = data.split()
+            head = TreeNode(data.pop(0))
+            queue = [head]
+            while queue:
+                currNode = queue.pop(0)
+                left = data.pop(0)
+                right = data.pop(0)
+                if left != "None":
+                    leftNode = TreeNode(left)
+                    currNode.left = leftNode
+                    queue.append(leftNode)
+                if right != "None":
+                    rightNode = TreeNode(right)
+                    currNode.right = rightNode
+                    queue.append(rightNode)
+            return head
+
 
 codec = Codec()
 root1 = [1, 2, 3, None, None, 4, 5]
