@@ -43,6 +43,21 @@ class Solution:
             head = head.right
         return root
 
+    # Solution with reduced space complexity
+    def connect(self, root: 'Node'):
+        head = root
+        while root and root.left:
+            curr = root
+            while curr:
+                curr.left.next = curr.right
+                if curr.next:
+                    curr.right.next = curr.next.left
+                else:
+                    curr.right.next = None
+                curr = curr.next
+            root = root.left
+        return head
+
     print(connect([1, 2, 3, 4, 5, 6, 7]))
     print("The tree above should be \
         [1, None, 2, 3, None, 4, 5, 6, 7, None]")
