@@ -2,6 +2,8 @@
 Given a non-empty array of integers, return the k most frequent elements.
 """
 
+from collections import defaultdict, Counter
+
 
 class Solution(object):
     def topKFrequent(self, nums, k):
@@ -18,8 +20,7 @@ class Solution(object):
             top.extend(frequency[times])
         return top[:k]
 
-    def main():
-        print topKFrequent([1, 1, 1, 2, 2, 3], 2)
-        print topKFrequent([1], 1)
-        print topKFrequent([1, 1, 1, 2, 2, 3], 3)
-        print("The arrays above should be [1, 2], [1], and [1, 2, 3]")
+    print(topKFrequent([1, 1, 1, 2, 2, 3], 2))
+    print(topKFrequent([1], 1))
+    print(topKFrequent([1, 1, 1, 2, 2, 3], 3))
+    print("The arrays above should be [1, 2], [1], and [1, 2, 3]")
