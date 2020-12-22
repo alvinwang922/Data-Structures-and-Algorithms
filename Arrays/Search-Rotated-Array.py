@@ -1,29 +1,36 @@
-# Suppose an array sorted in ascending order is rotated
-# at some pivot unknown to you beforehand.
-# You are given a target value to search.
-# If found in the array return its index, otherwise return -1.
-# (i.e., [0,1,2,4,5,6,7] might become [4,5,6,7,0,1,2]).
-
-# Input:  nums = [4,5,6,7,0,1,2], target = 0, output = 4
-# Input: nums = [4,5,6,7,0,1,2] target = 3, output: -1
-
-
-def rotatedArraySearch(nums, target):
-    left = 0
-    right = len(nums)-1
-    # find the point where array pivots
-    while left != right:
-        pivot = (right - left)//2
-        if nums[right] < nums[pivot]:
-            left = pivot + 1
-        else:
-            right = pivot - 1
-    if target < nums[0]:
-        return binsearch(arr[left:], target) + left
-    else:
-        return binsearch(arr[:left], target)
+"""
+You are given an integer array nums sorted in 
+ascending order, and an integer target. Suppose 
+that nums is rotated at some pivot unknown to 
+you beforehand (i.e., [0,1,2,4,5,6,7] might 
+become [4,5,6,7,0,1,2]). If target is found in 
+the array return its index, otherwise, return -1.
+"""
 
 
-print(rotatedArraySearch([[4, 5, 6, 7, 0, 1, 2]], 0))
-print(rotatedArraySearch([[4, 5, 6, 7, 0, 1, 2]], 3))
-print("The array above should be 4 and -1")
+class Solution:
+    def search(self, nums: List[int], target: int):
+        left = 0
+        right = len(nums) - 1
+        while left < right:
+            pivot = (left + right) // 2
+            if nums[pivot] > nums[right]:
+                if target > nums[pivot] or \
+                        target <= nums[right]:
+                    left = pivot + 1
+                else:
+                    right = pivot
+            else:
+                if target > nums[pivot] and \
+                        target <= nums[right]:
+                    left = pivot + 1
+                else:
+                    right = pivot
+        if left == right and target != nums[left]:
+            return -1
+        return left
+
+    print(search([4, 5, 6, 7, 0, 1, 2], 0))
+    print(search([4, 5, 6, 7, 0, 1, 2], 3))
+    print(search([1], 0))
+    print("The array above should be 4, -1, and -1")
