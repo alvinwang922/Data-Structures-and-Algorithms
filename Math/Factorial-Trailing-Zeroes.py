@@ -15,11 +15,10 @@ class Solution:
         return ans
 
     # Recursive solution
-    def trailingZeroes(self, n: int):
+    def trailingZeroes2(self, n: int):
         if n == 0:
             return 0
-        return n // 5 + \
-            self.trailingZeroes(n // 5)
+        return n // 5 + self.trailingZeroes(n // 5)
 
     print(trailingZeroes(3))
     print(trailingZeroes(5))
