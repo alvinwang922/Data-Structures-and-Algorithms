@@ -12,8 +12,7 @@ class Solution(object):
         currSum = a ^ b
         return self.getSum(carry, currSum)
 
-
-print(getSum(2, 3))
-print(getSum(10, 13))
-print(getSum(20, 2))
-print("The values above should be 5, 23, 22.")
+    print(getSum(2, 3))
+    print(getSum(10, 13))
+    print(getSum(20, 2))
+    print("The values above should be 5, 23, 22.")
