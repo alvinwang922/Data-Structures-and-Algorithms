@@ -18,8 +18,7 @@ class Solution:
             root.right = self.buildTree(preorder, inorder[rootIndex + 1:])
             return root
 
-
-print(buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]))
-print(buildTree([3, 9, 1, 2, 20, 15, 7], [1, 9, 2, 3, 15, 20, 7]))
-print("The trees above should be [3, 9, 20, null, null, 15, 7] \
-    and [3, 9, 20, 1, 2, 15, 7].")
+    print(buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]))
+    print(buildTree([3, 9, 1, 2, 20, 15, 7], [1, 9, 2, 3, 15, 20, 7]))
+    print("The trees above should be [3, 9, 20, null, null, 15, 7] \
+        and [3, 9, 20, 1, 2, 15, 7].")
