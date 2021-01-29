@@ -16,7 +16,7 @@ class TreeNode:
 
 
 class Solution:
-    def maxPathSum(self, root: TreeNode) -> int:
+    def maxPathSum(self, root: TreeNode):
         sums = []
         self.getMaxSum(root, sums)
         return max(sums)
@@ -30,8 +30,7 @@ class Solution:
         sums.append(currMax)
         return root.val + max(left, right)
 
-
-print(maxPathSum([1, 2, 3]))
-print(maxPathSum([-10, 9, 20, None, None, 15, 7]))
-print(maxPathSum([1, 2, None, 3, None, 4, None, 5]))
-print("The integers above should be 6, 42, 15.")
+    print(maxPathSum([1, 2, 3]))
+    print(maxPathSum([-10, 9, 20, None, None, 15, 7]))
+    print(maxPathSum([1, 2, None, 3, None, 4, None, 5]))
+    print("The integers above should be 6, 42, 15.")
