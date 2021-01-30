@@ -40,7 +40,6 @@ class Solution(object):
         visited[i] = 1
         return True
 
-
-print(canFinish(2, [[1, 0]]))
-print(canFinish(2, [[1, 0], [0, 1]]))
-print("The booleans above should be True and False")
+    print(canFinish(2, [[1, 0]]))
+    print(canFinish(2, [[1, 0], [0, 1]]))
+    print("The booleans above should be True and False.")
