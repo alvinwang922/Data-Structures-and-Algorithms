@@ -3,8 +3,11 @@
 # Each node in the graph contains a val (int) and a list
 # (List[Node]) of its neighbors.
 
+import collections
 
 # Definition for a Node.
+
+
 class Node(object):
     def __init__(self, val=0, neighbors=None):
         self.val = val
@@ -17,7 +20,7 @@ class Solution(object):
         if not node:
             return
         copy = {node: Node(node.val)}
-        element = deque([node])
+        element = collections.deque([node])
         while element:
             for i in range(len(element)):
                 currNode = element.popleft()
