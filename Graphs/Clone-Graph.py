@@ -28,10 +28,9 @@ class Solution(object):
                     copy[currNode].neighbors.append(copy[neigh])
         return copy[node]
 
-
-print(cloneGraph([[2, 4], [1, 3], [2, 4], [1, 3]]))
-print(cloneGraph([[]]))
-print(cloneGraph([]))
-print(cloneGraph([[2], [1]]))
-print("The graphs above should be [[2,4],[1,3],[2,4],[1,3]],\
-    [[]],[],and [[2],[1]].")
+    print(cloneGraph([[2, 4], [1, 3], [2, 4], [1, 3]]))
+    print(cloneGraph([[]]))
+    print(cloneGraph([]))
+    print(cloneGraph([[2], [1]]))
+    print("The graphs above should be [[2,4],[1,3],[2,4],[1,3]],\
+        [[]],[],and [[2],[1]].")
