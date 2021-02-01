@@ -76,8 +76,7 @@ class Solution:
         return thousands[num // 1000] + hundreds[(num % 1000) // 100] + \
             tens[(num % 100) // 10] + ones[num % 10]
 
-
-print(intToRoman(9))
-print(intToRoman(58))
-print(intToRoman(1994))
-print("The strings above should be \"IX\", \"LVIII\", and \"MCMXCIV\".")
+    print(intToRoman(9))
+    print(intToRoman(58))
+    print(intToRoman(1994))
+    print("The strings above should be \"IX\", \"LVIII\", and \"MCMXCIV\".")
