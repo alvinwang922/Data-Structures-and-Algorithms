@@ -23,29 +23,28 @@ INT_MAX (231 − 1) or INT_MIN (−231) is returned.
 
 
 class Solution:
-    def myAtoi(self, str: str):
-        if not str:
+    def myAtoi(self, s: str):
+        if not s:
             return 0
         negative = False
-        str = str.strip()
+        s = s.strip()
         start = 0
-        if start < len(str) and str[start] == "-":
+        if start < len(s) and s[start] == "-":
             negative = True
             start += 1
-        elif start < len(str) and str[start] == "+":
+        elif start < len(s) and s[start] == "+":
             start += 1
         end = start
-        while end < len(str) and str[end].isnumeric():
+        while end < len(s) and s[end].isnumeric():
             end += 1
         if start == end:
             return 0
         if negative:
-            return max(int(str[start:end]) * -1, -2147483648)
-        return min(int(str[start:end]), 2147483647)
+            return max(int(s[start:end]) * -1, -2147483648)
+        return min(int(s[start:end]), 2147483647)
 
-
-print(myAtoi("42"))
-print(myAtoi("   -42"))
-print(myAtoi("4193 with words"))
-print(myAtoi("words and 987"))
-print("The values above should be 42, -42, 4193, and 0.")
+    print(myAtoi("42"))
+    print(myAtoi("   -42"))
+    print(myAtoi("4193 with words"))
+    print(myAtoi("words and 987"))
+    print("The values above should be 42, -42, 4193, and 0.")
