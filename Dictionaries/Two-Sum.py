@@ -18,8 +18,7 @@ class Solution:
             else:
                 tracker[target - nums[i]] = i
 
-
-print(twoSum([2, 7, 11, 15], 9))
-print(twoSum([3, 2, 4], 6))
-print(twoSum([3, 3], 6))
-print("The arrays above should be [0, 1], [1, 2], and [0, 1].")
+    print(twoSum([2, 7, 11, 15], 9))
+    print(twoSum([3, 2, 4], 6))
+    print(twoSum([3, 3], 6))
+    print("The arrays above should be [0, 1], [1, 2], and [0, 1].")
