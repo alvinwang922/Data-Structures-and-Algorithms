@@ -12,8 +12,7 @@ class Solution:
                 return i
         return -1
 
-
-print(strStr("hello", "ll"))
-print(strStr("aaaaa", "bba"))
-print(strStr("", ""))
-print("The values above should be 2, -1, and 0.")
+    print(strStr("hello", "ll"))
+    print(strStr("aaaaa", "bba"))
+    print(strStr("", ""))
+    print("The values above should be 2, -1, and 0.")
