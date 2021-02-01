@@ -23,8 +23,7 @@ class Solution(object):
             most = max(most, area)
         return most
 
-
-print(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
-print(maxArea([2, 9, 7]))
-print(maxArea([1, 2, 3, 4, 5]))
-print("The values above should be 49, 4, and 6.")
+    print(maxArea([1, 8, 6, 2, 5, 4, 8, 3, 7]))
+    print(maxArea([2, 9, 7]))
+    print(maxArea([1, 2, 3, 4, 5]))
+    print("The values above should be 49, 4, and 6.")
