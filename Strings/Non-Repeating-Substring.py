@@ -1,5 +1,6 @@
 """
-Given a string, find the length of the longest substring without repeating characters.
+Given a string, find the length of the longest substring without 
+repeating characters.
 """
 
 
@@ -19,8 +20,7 @@ class Solution:
                 end += 1
         return length
 
-
-print(lengthOfLongestSubstring("abcabcbb"))
-print(lengthOfLongestSubstring("bbbbb"))
-print(lengthOfLongestSubstring("pwwkew"))
-print("The integers above should be 3, 1, and 3.")
+    print(lengthOfLongestSubstring("abcabcbb"))
+    print(lengthOfLongestSubstring("bbbbb"))
+    print(lengthOfLongestSubstring("pwwkew"))
+    print("The integers above should be 3, 1, and 3.")
