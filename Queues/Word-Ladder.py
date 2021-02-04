@@ -13,6 +13,8 @@ You may assume no duplicates in the word list.
 You may assume beginWord and endWord are non-empty and are not the same.
 """
 
+import collections
+
 
 class Solution(object):
     def ladderLength(self, beginWord, endWord, wordList):
@@ -36,9 +38,8 @@ class Solution(object):
                         queue.append([next_word, length + 1])
         return 0
 
-    def main():
-        print(ladderLength("hit", "cog", [
-              "hot", "dot", "dog", "lot", "log", "cog"]))
+        print(ladderLength("hit", "cog", ["hot", "dot", "dog",
+                                          "lot", "log", "cog"]))
         print(ladderLength("hit", "cog", ["hot", "dot", "dog", "lot", "log"]))
         print(ladderLength("lol", "dol", ["hot", "dog", "dol"]))
         print("The values above should be 5, 0, and 2.")
