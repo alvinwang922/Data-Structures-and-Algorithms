@@ -17,7 +17,8 @@ class Solution:
         rows, cols, original = len(image), len(image[0]), image[sr][sc]
 
         def traverse(row, col):
-            if (0 <= row < rows and 0 <= col < cols) and image[row][col] == original:
+            if (0 <= row < rows and 0 <= col < cols) \
+                    and image[row][col] == original:
                 image[row][col] = newColor
             else:
                 return
@@ -27,8 +28,7 @@ class Solution:
             traverse(sr, sc)
         return image
 
-
-print(floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2))
-print(floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 2, 3))
-print("The matrices above should be [[2, 2, 2], [2, 2, 0], [2, 0, 1]] and \
-    [[1, 1, 1], [1, 1, 3], [1, 0, 1]].")
+    print(floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2))
+    print(floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 2, 3))
+    print("The matrices above should be [[2, 2, 2], [2, 2, 0], [2, 0, 1]] \
+        and [[1, 1, 1], [1, 1, 3], [1, 0, 1]].")
