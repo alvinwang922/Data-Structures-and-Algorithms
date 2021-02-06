@@ -9,6 +9,8 @@ other, otherwise not. And you have to output the total number of friend circles
 among all the students.
 """
 
+from collections import defaultdict
+
 
 class Solution:
     def findCircleNum(self, M: List[List[int]]):
