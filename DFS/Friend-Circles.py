@@ -36,8 +36,7 @@ class Solution:
 
         return circles
 
-
-print(findCircleNum([[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
-print(findCircleNum([[1, 1, 0], [1, 1, 1], [0, 1, 1]]))
-print(findCircleNum([[1, 0, 0], [0, 1, 0], [0, 0, 1]]))
-print("The values above should be 2, 1, and 3.")
+    print(findCircleNum([[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
+    print(findCircleNum([[1, 1, 0], [1, 1, 1], [0, 1, 1]]))
+    print(findCircleNum([[1, 0, 0], [0, 1, 0], [0, 0, 1]]))
+    print("The values above should be 2, 1, and 3.")
