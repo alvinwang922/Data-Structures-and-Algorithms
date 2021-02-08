@@ -29,8 +29,7 @@ class Solution(object):
                     isStraightLine = False
         return isStraightLine
 
-
-print(checkStraightLine([[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]))
-print(checkStraightLine([[1, 1], [2, 2], [3, 4], [4, 5], [5, 6], [7, 7]]))
-print(checkStraightLine([[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [7, 1]]))
-print("The booleans above should be True, False, and True.")
+    print(checkStraightLine([[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]))
+    print(checkStraightLine([[1, 1], [2, 2], [3, 4], [4, 5], [5, 6], [7, 7]]))
+    print(checkStraightLine([[1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [7, 1]]))
+    print("The booleans above should be True, False, and True.")
