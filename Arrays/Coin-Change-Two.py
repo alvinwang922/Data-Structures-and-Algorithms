@@ -14,8 +14,7 @@ class Solution:
                 combinations[i] += combinations[i - coin]
         return combinations[-1]
 
-
-print(change(5, [1, 2, 5]))
-print(change(3, [2]))
-print(change(10, [10]))
-print("The values above should be 4, 0, and 10.")
+    print(change(5, [1, 2, 5]))
+    print(change(3, [2]))
+    print(change(10, [10]))
+    print("The values above should be 4, 0, and 10.")
