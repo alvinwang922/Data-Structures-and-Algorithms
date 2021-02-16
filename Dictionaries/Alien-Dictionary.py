@@ -20,8 +20,7 @@ class Solution:
                     return False
         return True
 
-
-print(isAlienSorted(["hello", "leetcode"], "hlabcdefgijkmnopqrstuvwxyz"))
-print(isAlienSorted(["word", "world", "row"], "worldabcefghijkmnpqstuvxyz"))
-print(isAlienSorted(["apple", "app"], "abcdefghijklmnopqrstuvwxyz"))
-print("The booleans above should be True, False, and False.")
+    print(isAlienSorted(["hello", "leetcode"], "hlabcdefgijkmnopqrstuvwxyz"))
+    print(isAlienSorted(["word", "world", "row"], "worldabcefghijkmnpqstuvxyz"))
+    print(isAlienSorted(["apple", "app"], "abcdefghijklmnopqrstuvwxyz"))
+    print("The booleans above should be True, False, and False.")
