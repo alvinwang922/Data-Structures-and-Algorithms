@@ -4,12 +4,14 @@ it's possible to divide this array into sets of k consecutive numbers
 Return True if its possible otherwise return False.
 """
 
+import collections
+
 
 class Solution:
     def isPossibleDivide(self, nums: List[int], k: int):
         if len(nums) % k != 0:
             return False
-        count = Counter(nums)
+        count = collections.Counter(nums)
         keys = sorted(count.keys())
         for n in keys:
             if count[n] > 0:
