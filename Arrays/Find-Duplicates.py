@@ -16,8 +16,7 @@ class Solution:
             nums[index] = -nums[index]
         return res
 
-
-print(findDuplicates([4, 3, 2, 7, 8, 2, 3, 1]))
-print(findDuplicates([1, 3, 2, 8, 8, 2, 3, 1]))
-print(findDuplicates([1, 2, 3, 4]))
-print("The lists above should be [2,3], [8,2,3,1], and [].")
+    print(findDuplicates([4, 3, 2, 7, 8, 2, 3, 1]))
+    print(findDuplicates([1, 3, 2, 8, 8, 2, 3, 1]))
+    print(findDuplicates([1, 2, 3, 4]))
+    print("The lists above should be [2,3], [8,2,3,1], and [].")
