@@ -24,13 +24,12 @@ class Solution(object):
             balance = 0
             for i in range(len(gas)):
                 balance += gas[i] - cost[i]
-                if balance < 0
-                balance = 0
-                position = i + 1
+                if balance < 0:
+                    balance = 0
+                    position = i + 1
             return position
 
-
-print(canCompleteCircuit([1, 2, 3, 4, 5], [3, 4, 5, 1, 2]))
-print(canCompleteCircuit([2, 3, 4], [3, 4, 3]))
-print(canCompleteCircuit([], [1]))
-print("The values above should be 3, -1, and -1.")
+    print(canCompleteCircuit([1, 2, 3, 4, 5], [3, 4, 5, 1, 2]))
+    print(canCompleteCircuit([2, 3, 4], [3, 4, 3]))
+    print(canCompleteCircuit([], [1]))
+    print("The values above should be 3, -1, and -1.")
