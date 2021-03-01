@@ -25,8 +25,7 @@ class Solution:
                 a += 1
         return intervals
 
-
-print(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]],
-                           [[1, 5], [8, 12], [15, 24], [25, 26]]))
-print("The intervals above should be [[1, 2], [5, 5], [8, 10], \
-    [15, 23], [24, 24], [25, 25]].")
+    print(intervalIntersection([[0, 2], [5, 10], [13, 23], [24, 25]],
+                               [[1, 5], [8, 12], [15, 24], [25, 26]]))
+    print("The intervals above should be [[1, 2], [5, 5], [8, 10], \
+        [15, 23], [24, 24], [25, 25]].")
