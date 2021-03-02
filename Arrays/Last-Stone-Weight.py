@@ -18,8 +18,7 @@ class Solution:
             stones.append(stones.pop() - stones.pop())
         return stones[0]
 
-
-print(lastStoneWeight([2, 7, 4, 1, 8, 1]))
-print(lastStoneWeight([2, 7, 4, 1]))
-print(lastStoneWeight([1, 2, 7, 8, 9, 5, 1]))
-print("The values above should be 1, 0, and 1.")
+    print(lastStoneWeight([2, 7, 4, 1, 8, 1]))
+    print(lastStoneWeight([2, 7, 4, 1]))
+    print(lastStoneWeight([1, 2, 7, 8, 9, 5, 1]))
+    print("The values above should be 1, 0, and 1.")
