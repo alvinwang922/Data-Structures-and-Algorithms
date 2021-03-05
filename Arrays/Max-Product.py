@@ -1,6 +1,8 @@
-# Given an integer array nums, find the contiguous subarray
-# within an array (containing at least one number) which
-# has the largest product.
+"""
+Given an integer array nums, find the contiguous subarray
+within an array (containing at least one number) which
+has the largest product.
+"""
 
 
 class Solution(object):
@@ -19,8 +21,7 @@ class Solution(object):
             maxValue = max(currentMax, maxValue)
         return maxValue
 
-
-print(maxProduct([-2, 3, -4, 5, -6]))
-print(maxProduct([2, 3, -2, 4]))
-print(maxProduct([-2, 0, -1]))
-print("The values above should be 360, 6, and 0.")
+    print(maxProduct([-2, 3, -4, 5, -6]))
+    print(maxProduct([2, 3, -2, 4]))
+    print(maxProduct([-2, 0, -1]))
+    print("The values above should be 360, 6, and 0.")
