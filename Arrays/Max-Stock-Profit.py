@@ -9,7 +9,7 @@
 
 class Solution(object):
     def maxProfit(self, prices):
-        i = 0;
+        i = 0
         localMin = prices[0]
         localMax = prices[0]
         maxProfit = 0
@@ -23,8 +23,7 @@ class Solution(object):
             maxProfit += localMax - localMin
         return maxProfit
 
-
-print(maxProfit([7, 1, 5, 3, 6, 4]))
-print(maxProfit([1, 2, 3, 4, 5]))
-print(maxProfit([[7, 6, 4, 3, 1]))
-print("The values above should be 7, 4, and 0.")
+    print(maxProfit([7, 1, 5, 3, 6, 4]))
+    print(maxProfit([1, 2, 3, 4, 5]))
+    print(maxProfit([7, 6, 4, 3, 1]))
+    print("The values above should be 7, 4, and 0.")
