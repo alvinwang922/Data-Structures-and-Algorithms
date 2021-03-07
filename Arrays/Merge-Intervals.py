@@ -13,9 +13,8 @@ class Solution:
                 final += i,
         return final
 
-
-print(merge([[1, 3], [2, 6], [8, 10], [15, 18]]))
-print(merge([[1, 4], [4, 5]]))
-print(merge([]))
-print("The arrays above should be [[1, 6], [8, 10], [15, 18]], \
-    [[1, 5]], and [].")
+    print(merge([[1, 3], [2, 6], [8, 10], [15, 18]]))
+    print(merge([[1, 4], [4, 5]]))
+    print(merge([]))
+    print("The arrays above should be [[1, 6], [8, 10], [15, 18]], \
+        [[1, 5]], and [].")
