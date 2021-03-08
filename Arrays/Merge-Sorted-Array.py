@@ -20,9 +20,8 @@ class Solution:
                 m -= 1
         return nums1
 
-
-print(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
-print(merge([1, 2, 0, 0, 0], 2, [3, 5, 6], 3))
-print(merge([7, 9, 0, 0, 0], 2, [3, 5, 6], 3))
-print("The arrays above should be [1, 2, 2, 3, 5, 6], \
-    [1, 2, 3, 5, 6], and [3, 5, 6, 7, 9].")
+    print(merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3))
+    print(merge([1, 2, 0, 0, 0], 2, [3, 5, 6], 3))
+    print(merge([7, 9, 0, 0, 0], 2, [3, 5, 6], 3))
+    print("The arrays above should be [1, 2, 2, 3, 5, 6], \
+        [1, 2, 3, 5, 6], and [3, 5, 6, 7, 9].")
