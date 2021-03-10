@@ -1,13 +1,14 @@
 """
-Implement next permutation, which rearranges numbers into the lexicographically next 
-greater permutation of numbers. If such arrangement is not possible, it must rearrange 
-it as the lowest possible order (ie, sorted in ascending order).
-The replacement must be in-place and use only constant extra memory.
+Implement next permutation, which rearranges numbers into the 
+lexicographically next greater permutation of numbers. If such 
+arrangement is not possible, it must rearrange it as the lowest 
+possible order (ie, sorted in ascending order). The replacement 
+must be in-place and use only constant extra memory.
 """
 
 
 class Solution:
-    def nextPermutation(self, nums: List[int]) -> None:
+    def nextPermutation(self, nums: List[int]):
         """
         Do not return anything, modify nums in-place instead.
         """
@@ -27,8 +28,7 @@ class Solution:
                 front += 1
                 end -= 1
 
-
-print(nextPermutation([1, 2, 3]))
-print(nextPermutation([3, 2, 1]))
-print(nextPermutation([1, 1, 5]))
-print("The arrays above should be [1, 3, 2], [1, 2, 3], and [1, 5, 1].")
+    print(nextPermutation([1, 2, 3]))
+    print(nextPermutation([3, 2, 1]))
+    print(nextPermutation([1, 1, 5]))
+    print("The arrays above should be [1, 3, 2], [1, 2, 3], and [1, 5, 1].")
