@@ -9,9 +9,7 @@ must be in-place and use only constant extra memory.
 
 class Solution:
     def nextPermutation(self, nums: List[int]):
-        """
-        Do not return anything, modify nums in-place instead.
-        """
+        # Do not return anything, modify nums in-place instead.
         i = j = len(nums) - 1
         while i > 0 and nums[i] <= nums[i - 1]:
             i -= 1
