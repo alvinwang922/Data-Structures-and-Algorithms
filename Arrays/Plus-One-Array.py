@@ -18,14 +18,13 @@ class Solution:
                 return [1] + [0] * len(digits)
             else:
                 digits[tracker] += 1
-                return digits[:tracker + 1] + [0] * (len(digits) - tracker - 1)
+                return digits[:tracker + 1] + [0] * \
+                    (len(digits) - tracker - 1)
         digits[-1] += 1
         return digits
 
-
-# Recursive solution
-class Solution:
-    def plusOne(self, digits: List[int]):
+    # Recursive solution
+    def plusOne2(self, digits: List[int]):
         if len(digits) == 1 and digits[0] == 9:
             return [1, 0]
         if digits[-1] != 9:
@@ -36,8 +35,7 @@ class Solution:
             digits[:-1] = self.plusOne(digits[:-1])
             return digits
 
-
-print(plusOne([4, 3, 2, 1]))
-print(plusOne([8, 9, 9]))
-print(plusOne([9]))
-print("The arrays above should be [4, 3, 2, 2], [9, 0, 0], and [1, 0].")
+    print(plusOne([4, 3, 2, 1]))
+    print(plusOne([8, 9, 9]))
+    print(plusOne([9]))
+    print("The arrays above should be [4, 3, 2, 2], [9, 0, 0], and [1, 0].")
