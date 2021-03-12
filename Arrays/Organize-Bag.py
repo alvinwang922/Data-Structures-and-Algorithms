@@ -15,8 +15,6 @@ def organizeBag(bag):
             bag[len(bag) - 1] = 0
     return bag
 
-
-def main():
     print(organizeBag([0, 1, 0, 3, 12]))
     print(organizeBag([5, 4, 0]))
     print(organizeBag([0, 1]))
