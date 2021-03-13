@@ -1,4 +1,7 @@
-# Count the number of prime numbers less than a non-negative number, n.
+"""
+Count the number of prime numbers less than a 
+non-negative number, n.
+"""
 
 
 class Solution(object):
@@ -18,8 +21,7 @@ class Solution(object):
                     j += 1
         return counter
 
-
-print(countPrimes(1))
-print(countPrimes(3))
-print(countPrimes(10))
-print("The values above should be 0, 1, and 4.")
+    print(countPrimes(1))
+    print(countPrimes(3))
+    print(countPrimes(10))
+    print("The values above should be 0, 1, and 4.")
