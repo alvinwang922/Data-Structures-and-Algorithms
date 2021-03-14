@@ -5,18 +5,17 @@ elements of nums except nums[i].
 """
 
 
-class Solution:
-    def productExceptSelf(self, nums: List[int]):
-        tracker = 1
-        final = []
-        for i in range(len(nums)):
-            final.append(tracker)
-            tracker *= nums[i]
-        tracker = 1
-        for i in range(len(nums) - 1, -1, -1):
-            final[i] *= tracker
-            tracker *= nums[i]
-        return final
+def productExceptSelf(self, nums: List[int]):
+    tracker = 1
+    final = []
+    for i in range(len(nums)):
+        final.append(tracker)
+        tracker *= nums[i]
+    tracker = 1
+    for i in range(len(nums) - 1, -1, -1):
+        final[i] *= tracker
+        tracker *= nums[i]
+    return final
 
 
 print(productExceptSelf([1, 2, 3]))
