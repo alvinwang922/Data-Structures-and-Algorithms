@@ -15,8 +15,9 @@ def organizeBag(bag):
             bag[len(bag) - 1] = 0
     return bag
 
-    print(organizeBag([0, 1, 0, 3, 12]))
-    print(organizeBag([5, 4, 0]))
-    print(organizeBag([0, 1]))
-    print("The arrays above should be [1, 3, 12, 0, 0], \
-         [5, 4, 0], and [1, 0].")
+
+print(organizeBag([0, 1, 0, 3, 12]))
+print(organizeBag([5, 4, 0]))
+print(organizeBag([0, 1]))
+print("The arrays above should be [1, 3, 12, 0, 0], \
+        [5, 4, 0], and [1, 0].")
