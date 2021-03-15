@@ -5,7 +5,7 @@ elements of nums except nums[i].
 """
 
 
-def productExceptSelf(self, nums: List[int]):
+def productExceptSelf(nums: List[int]):
     tracker = 1
     final = []
     for i in range(len(nums)):
