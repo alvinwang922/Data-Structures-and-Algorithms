@@ -9,26 +9,26 @@ If it is impossible to finish all courses, return an empty array.
 """
 
 
-class Solution:
-    def findOrder(self, numCourses: int, prerequisites: List[List[int]]):
-        needed = [set() for _ in range(numCourses)]
-        rely = [[] for _ in range(numCourses)]
-        for prereq in prerequisites:
-            needed[prereq[0]].add(prereq[1])
-            rely[prereq[1]].append(prereq[0])
-        ans, curr = [], [i for i in range(numCourses) if not needed[i]]
-        while curr:
-            temp = []
-            for i in curr:
-                ans.append(i)
-                for j in rely[i]:
-                    needed[j].remove(i)
-                    if not needed[j]:
-                        curr.append(j)
-            curr = temp
-        return ans if len(ans) == numCourses else []
+def findOrder(numCourses: int, prerequisites: List[List[int]]):
+    needed = [set() for _ in range(numCourses)]
+    rely = [[] for _ in range(numCourses)]
+    for prereq in prerequisites:
+        needed[prereq[0]].add(prereq[1])
+        rely[prereq[1]].append(prereq[0])
+    ans, curr = [], [i for i in range(numCourses) if not needed[i]]
+    while curr:
+        temp = []
+        for i in curr:
+            ans.append(i)
+            for j in rely[i]:
+                needed[j].remove(i)
+                if not needed[j]:
+                    curr.append(j)
+        curr = temp
+    return ans if len(ans) == numCourses else []
 
-    print(findOrder(2, [[1, 0]]))
-    print(findOrder(4, [[1, 0], [2, 0], [3, 1], [3, 2]]))
-    print(findOrder(1, []))
-    print("The arrays above should be [0, 1], [0, 2, 1, 3], and [0].")
+
+print(findOrder(2, [[1, 0]]))
+print(findOrder(4, [[1, 0], [2, 0], [3, 1], [3, 2]]))
+print(findOrder(1, []))
+print("The arrays above should be [0, 1], [0, 2, 1, 3], and [0].")
