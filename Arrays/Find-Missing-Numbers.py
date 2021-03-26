@@ -9,16 +9,16 @@ extra space.
 """
 
 
-class Solution:
-    def findDisappearedNumbers(self, nums: List[int]):
-        for num in nums:
-            idx = abs(num) - 1
-            nums[idx] = -abs(nums[idx])
-        return [i + 1 for i in range(len(nums))
-                if nums[i] > 0]
+def findDisappearedNumbers(nums: List[int]):
+    for num in nums:
+        idx = abs(num) - 1
+        nums[idx] = -abs(nums[idx])
+    return [i + 1 for i in range(len(nums))
+            if nums[i] > 0]
 
-    print(findDisappearedNumbers([1, 2, 1]))
-    print(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]))
-    print(findDisappearedNumbers([2, 2, 3, 3, 5, 5]))
-    print("The arrays above should be [3], [5, 6], and \
-        [1, 4, 6].")
+
+print(findDisappearedNumbers([1, 2, 1]))
+print(findDisappearedNumbers([4, 3, 2, 7, 8, 2, 3, 1]))
+print(findDisappearedNumbers([2, 2, 3, 3, 5, 5]))
+print("The arrays above should be [3], [5, 6], and \
+    [1, 4, 6].")
