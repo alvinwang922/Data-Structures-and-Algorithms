@@ -9,7 +9,7 @@ closed interval.  For example, the intersection of [1, 3] and [2, 4] is [2, 3].)
 """
 
 
-def intervalIntersection(self, A: List[List[int]], B: List[List[int]]):
+def intervalIntersection(A: List[List[int]], B: List[List[int]]):
     a, b, intervals = 0, 0, []
     while a < len(A) and b < len(B):
         aInterval = A[a]
