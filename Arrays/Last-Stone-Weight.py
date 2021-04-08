@@ -11,7 +11,7 @@ Return the weight of this stone (or 0 if there are no stones left.)
 """
 
 
-def lastStoneWeight(self, stones: List[int]):
+def lastStoneWeight(stones: List[int]):
     for i in range(len(stones) - 1):
         stones.sort()
         stones.append(stones.pop() - stones.pop())
