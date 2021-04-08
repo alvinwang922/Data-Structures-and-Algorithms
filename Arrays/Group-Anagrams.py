@@ -7,7 +7,7 @@ The order of your output does not matter.
 import collections
 
 
-def groupAnagrams(self, strs):
+def groupAnagrams(strs):
     anagrams = collections.defaultdict(list)
     for word in strs:
         anagrams[tuple(sorted(word))].append(word)
