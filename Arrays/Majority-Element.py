@@ -7,7 +7,7 @@ majority element always exist in the array.
 """
 
 
-def majorityElement(self, nums):
+def majorityElement(nums):
     if len(nums) < 3:
         return nums[0]
     counter = 0
@@ -23,7 +23,7 @@ def majorityElement(self, nums):
 # Better solution in O(n) instead of O(nlogn)
 
 
-def majorityElement2(self, nums):
+def majorityElement2(nums):
     elements = dict()
     for i in range(len(nums)):
         elements[nums[i]] = elements.get(nums[i], 0) + 1
