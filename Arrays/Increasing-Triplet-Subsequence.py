@@ -4,7 +4,7 @@ subsequence of length 3 exists or not in the array.
 """
 
 
-def increasingTriplet(self, nums: List[int]):
+def increasingTriplet(nums: List[int]):
     if len(nums) < 3:
         return False
     start, mid = nums[0], float("inf")
@@ -19,7 +19,7 @@ def increasingTriplet(self, nums: List[int]):
 
 
 # A cleaner solution
-def increasingTriplet2(self, nums: List[int]):
+def increasingTriplet2(nums: List[int]):
     start = mid = float("inf")
     for n in nums:
         if n <= start:
