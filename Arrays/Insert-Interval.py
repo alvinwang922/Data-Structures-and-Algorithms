@@ -5,7 +5,7 @@ initially sorted according to their start times.
 """
 
 
-def insert(self, intervals: List[List[int]], newInterval: List[int]):
+def insert(intervals: List[List[int]], newInterval: List[int]):
     front = []
     back = []
     intervalStart = newInterval[0]
