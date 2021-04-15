@@ -10,29 +10,29 @@ number is in one of the ranges.Each range [a,b] in the list should be output as:
 """
 
 
-class Solution:
-    def findMissingRanges(self, nums: List[int], lower: int, upper: int):
-        ans = []
+def findMissingRanges(nums: List[int], lower: int, upper: int):
+    ans = []
 
-        def helper(lower, upper):
-            if lower == upper:
-                return str(lower)
-            else:
-                return str(lower) + "->" + str(upper)
-        if not nums:
-            ans.append(helper(lower, upper))
-            return ans
-        if nums[0] > lower:
-            ans.append(helper(lower, nums[0] - 1))
-        for i in range(len(nums) - 1):
-            if nums[i+1] > nums[i] + 1:
-                ans.append(helper(nums[i] + 1, nums[i + 1] - 1))
-        if nums[len(nums) - 1] < upper:
-            ans.append(helper(nums[-1] + 1, upper))
+    def helper(lower, upper):
+        if lower == upper:
+            return str(lower)
+        else:
+            return str(lower) + "->" + str(upper)
+    if not nums:
+        ans.append(helper(lower, upper))
         return ans
+    if nums[0] > lower:
+        ans.append(helper(lower, nums[0] - 1))
+    for i in range(len(nums) - 1):
+        if nums[i+1] > nums[i] + 1:
+            ans.append(helper(nums[i] + 1, nums[i + 1] - 1))
+    if nums[len(nums) - 1] < upper:
+        ans.append(helper(nums[-1] + 1, upper))
+    return ans
 
-    print(findMissingRanges([0, 1, 3, 50, 75], 0, 99))
-    print(findMissingRanges([], 1, 1))
-    print(findMissingRanges([], -3, -1))
-    print("The arrays above should be [\"2\",\"4 -> 49\",\"51 -> 74\",\
-        \"76 -> 99\"], [\"1\"], and [\"-3 -> -1\"].")
+
+print(findMissingRanges([0, 1, 3, 50, 75], 0, 99))
+print(findMissingRanges([], 1, 1))
+print(findMissingRanges([], -3, -1))
+print("The arrays above should be [\"2\",\"4 -> 49\",\"51 -> 74\",\
+    \"76 -> 99\"], [\"1\"], and [\"-3 -> -1\"].")
