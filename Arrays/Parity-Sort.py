@@ -6,7 +6,7 @@ any answer array that satisfies this condition.
 """
 
 
-def sortArrayByParity(self, A: List[int]):
+def sortArrayByParity(A: List[int]):
     even, odd = 0, len(A) - 1
     while even < odd:
         while even < odd and A[even] % 2 == 0:
