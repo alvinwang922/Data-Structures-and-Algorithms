@@ -6,16 +6,15 @@ by modifying the input array in-place with O(1) extra memory.
 """
 
 
-class Solution:
-    def removeDuplicates(self, nums: List[int]):
-        l = len(nums)
-        counter = 0
-        for i in range(l - 1):
-            if nums[counter] == nums[counter + 1]:
-                nums.remove(nums[counter])
-            else:
-                counter += 1
-        return len(nums)
+def removeDuplicates(nums: List[int]):
+    l = len(nums)
+    counter = 0
+    for i in range(l - 1):
+        if nums[counter] == nums[counter + 1]:
+            nums.remove(nums[counter])
+        else:
+            counter += 1
+    return len(nums)
 
 
 print(removeDuplicates([1, 1, 2]))
