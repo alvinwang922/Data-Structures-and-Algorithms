@@ -8,21 +8,19 @@ Could you do it in-place with O(1) extra space?
 """
 
 
-class Solution:
-    def rotate(self, nums: List[int], k: int):
-        k = k % len(nums)
-        nums[:-k] = nums[:-k][::-1]
-        nums[-k:] = nums[-k:][::-1]
-        nums[:] = nums[::-1]
-        return nums
+def rotate(self, nums: List[int], k: int):
+    k = k % len(nums)
+    nums[:-k] = nums[:-k][::-1]
+    nums[-k:] = nums[-k:][::-1]
+    nums[:] = nums[::-1]
+    return nums
 
 
 # Another solution
-class Solution:
-    def rotate(self, nums: List[int], k: int):
-        k = k % len(nums)
-        nums[:] = nums[-k:] + nums[:-k]
-        return nums
+def rotate(self, nums: List[int], k: int):
+    k = k % len(nums)
+    nums[:] = nums[-k:] + nums[:-k]
+    return nums
 
 
 print(rotate([1, 2, 3, 4, 5, 6, 7], 3))
