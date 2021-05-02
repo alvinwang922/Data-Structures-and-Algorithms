@@ -8,29 +8,29 @@ the array return its index, otherwise, return -1.
 """
 
 
-class Solution:
-    def search(self, nums: List[int], target: int):
-        left = 0
-        right = len(nums) - 1
-        while left < right:
-            pivot = (left + right) // 2
-            if nums[pivot] > nums[right]:
-                if target > nums[pivot] or \
-                        target <= nums[right]:
-                    left = pivot + 1
-                else:
-                    right = pivot
+def search(nums: List[int], target: int):
+    left = 0
+    right = len(nums) - 1
+    while left < right:
+        pivot = (left + right) // 2
+        if nums[pivot] > nums[right]:
+            if target > nums[pivot] or \
+                    target <= nums[right]:
+                left = pivot + 1
             else:
-                if target > nums[pivot] and \
-                        target <= nums[right]:
-                    left = pivot + 1
-                else:
-                    right = pivot
-        if left == right and target != nums[left]:
-            return -1
-        return left
+                right = pivot
+        else:
+            if target > nums[pivot] and \
+                    target <= nums[right]:
+                left = pivot + 1
+            else:
+                right = pivot
+    if left == right and target != nums[left]:
+        return -1
+    return left
 
-    print(search([4, 5, 6, 7, 0, 1, 2], 0))
-    print(search([4, 5, 6, 7, 0, 1, 2], 3))
-    print(search([1], 0))
-    print("The array above should be 4, -1, and -1")
+
+print(search([4, 5, 6, 7, 0, 1, 2], 0))
+print(search([4, 5, 6, 7, 0, 1, 2], 3))
+print(search([1], 0))
+print("The array above should be 4, -1, and -1")
