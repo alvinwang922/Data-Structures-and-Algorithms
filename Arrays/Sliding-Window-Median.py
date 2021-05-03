@@ -12,21 +12,21 @@ is to output the median array for each window in the original array.
 from sortedcontainers import SortedList
 
 
-class Solution:
-    def medianSlidingWindow(self, nums: List[int], k: int):
-        window = SortedList()
-        tracker, ans = 0, []
-        for i in range(len(nums)):
-            window.add(nums[i])
-            if i - tracker + 1 == k:
-                ans.append(self.median(window, k))
-                window.remove(nums[tracker])
-                tracker += 1
-        return ans
+def medianSlidingWindow(nums: List[int], k: int):
+    window = SortedList()
+    tracker, ans = 0, []
+    for i in range(len(nums)):
+        window.add(nums[i])
+        if i - tracker + 1 == k:
+            ans.append(self.median(window, k))
+            window.remove(nums[tracker])
+            tracker += 1
+    return ans
 
-    def median(self, window, k):
-        return window[k // 2] if (k % 2) \
-            else (window[(k // 2) - 1] + window[k // 2]) / 2
+
+def median(self, window, k):
+    return window[k // 2] if (k % 2) \
+        else (window[(k // 2) - 1] + window[k // 2]) / 2
 
 
 print(medianSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3))
