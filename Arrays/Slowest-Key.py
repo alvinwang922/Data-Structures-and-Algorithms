@@ -16,18 +16,18 @@ keypresses, return the lexicographically largest key of the keypresses.
 """
 
 
-class Solution:
-    def slowestKey(self, releaseTimes: List[int], keysPressed: str):
-        ans, maxTime = keysPressed[0], releaseTimes[0]
-        for i in range(1, len(keysPressed)):
-            currTime = releaseTimes[i] - releaseTimes[i-1]
-            if currTime > maxTime or (currTime == maxTime and
-                                      keysPressed[i] > ans):
-                maxTime = currTime
-                ans = keysPressed[i]
-        return ans
+def slowestKey(releaseTimes: List[int], keysPressed: str):
+    ans, maxTime = keysPressed[0], releaseTimes[0]
+    for i in range(1, len(keysPressed)):
+        currTime = releaseTimes[i] - releaseTimes[i-1]
+        if currTime > maxTime or (currTime == maxTime and
+                                  keysPressed[i] > ans):
+            maxTime = currTime
+            ans = keysPressed[i]
+    return ans
 
-    print(slowestKey([9, 29, 49, 50], "cbcd"))
-    print(slowestKey([12, 23, 36, 46, 62], "spuda"))
-    print(slowestKey([1, 5, 40, 75, 110], "edafb"))
-    print("The strings above should be \"c\", \"a\", and \"f\".")
+
+print(slowestKey([9, 29, 49, 50], "cbcd"))
+print(slowestKey([12, 23, 36, 46, 62], "spuda"))
+print(slowestKey([1, 5, 40, 75, 110], "edafb"))
+print("The strings above should be \"c\", \"a\", and \"f\".")
