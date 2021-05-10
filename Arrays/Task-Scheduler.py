@@ -11,20 +11,22 @@ the CPU will take to finish all the given tasks.
 """
 
 
-class Solution:
-    def leastInterval(self, tasks: List[str], n: int):
-        count = Counter(tasks)
-        maxOccurrence = max(count.values())
-        maxTask = 0
-        for occurrence in count.values():
-            if occurrence == maxOccurrence:
-                maxTask += 1
-        interval = maxOccurrence - 1
-        middle = n - (maxTask - 1)
-        empty = interval * middle
-        remaining = len(tasks) - (maxOccurrence * maxTask)
-        idle = max(0, empty - remaining)
-        return len(tasks) + idle
+from collections import Counter
+
+
+def leastInterval(tasks: List[str], n: int):
+    count = Counter(tasks)
+    maxOccurrence = max(count.values())
+    maxTask = 0
+    for occurrence in count.values():
+        if occurrence == maxOccurrence:
+            maxTask += 1
+    interval = maxOccurrence - 1
+    middle = n - (maxTask - 1)
+    empty = interval * middle
+    remaining = len(tasks) - (maxOccurrence * maxTask)
+    idle = max(0, empty - remaining)
+    return len(tasks) + idle
 
 
 print(leastInterval(["A", "A", "A", "B", "B", "B"], 2))
