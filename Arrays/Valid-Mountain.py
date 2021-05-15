@@ -9,22 +9,22 @@ arr[i] > arr[i + 1] > ... > arr[arr.length - 1]
 """
 
 
-class Solution:
-    def validMountainArray(self, arr: List[int]):
-        if len(arr) < 3:
-            return False
-        left, right = 0, len(arr) - 1
-        while left < right:
-            if arr[left] < arr[left + 1]:
-                left += 1
-            elif arr[right] < arr[right - 1]:
-                right -= 1
-            else:
-                break
-        return (left != 0) and (right != len(arr) - 1) \
-            and (left == right)
+def validMountainArray(arr: List[int]):
+    if len(arr) < 3:
+        return False
+    left, right = 0, len(arr) - 1
+    while left < right:
+        if arr[left] < arr[left + 1]:
+            left += 1
+        elif arr[right] < arr[right - 1]:
+            right -= 1
+        else:
+            break
+    return (left != 0) and (right != len(arr) - 1) \
+        and (left == right)
 
-    print(validMountainArray([2, 1]))
-    print(validMountainArray([3, 5, 5]))
-    print(validMountainArray([0, 3, 2, 1]))
-    print("The booleans above should be False, False, and True.")
+
+print(validMountainArray([2, 1]))
+print(validMountainArray([3, 5, 5]))
+print(validMountainArray([0, 3, 2, 1]))
+print("The booleans above should be False, False, and True.")
