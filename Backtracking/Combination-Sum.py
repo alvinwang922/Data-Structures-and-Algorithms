@@ -23,9 +23,10 @@ def backtrack(candidates, combination, target, res):
         for i in range(len(candidates)):
             if target > 0:
                 backtrack(candidates[i:], combination + [candidates[i]],
-                target - candidates[i], res)
+                          target - candidates[i], res)
 
 
 print(combinationSum([2, 3, 6, 7], 7))
 print(combinationSum([2, 3, 5], 8))
-print("The arrays above should be [[2, 2, 3], [7]] and [[2, 2, 2, 2], [2, 3, 3], [3, 5]]."
+print("The arrays above should be [[2, 2, 3], [7]] and \
+    [[2, 2, 2, 2], [2, 3, 3], [3, 5]].")
