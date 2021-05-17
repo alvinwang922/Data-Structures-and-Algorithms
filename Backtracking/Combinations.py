@@ -4,18 +4,18 @@ k numbers out of 1 ... n. You may return the answer in any order.
 """
 
 
-class Solution:
-    def combine(self, n: int, k: int):
-        ans = []
-        self.backtrack(n, k, [], 1, ans)
-        return ans
+def combine(n: int, k: int):
+    ans = []
+    backtrack(n, k, [], 1, ans)
+    return ans
 
-    def backtrack(self, n, k, curr, ind, ans):
-        if len(curr) == k:
-            ans.append(curr)
-        else:
-            for i in range(ind, n + 1):
-                self.backtrack(n, k, curr + [i], i + 1, ans)
+
+def backtrack(n, k, curr, ind, ans):
+    if len(curr) == k:
+        ans.append(curr)
+    else:
+        for i in range(ind, n + 1):
+            backtrack(n, k, curr + [i], i + 1, ans)
 
 
 print(combine(4, 2))
