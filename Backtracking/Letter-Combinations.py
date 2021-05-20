@@ -7,30 +7,30 @@ is given below. Note that 1 does not map to any letters.
 """
 
 
-class Solution:
-    def letterCombinations(self, digits: str):
-        ans = []
-        if not digits:
-            return ans
-        nums = {'2': ['a', 'b', 'c'],
-                '3': ['d', 'e', 'f'],
-                '4': ['g', 'h', 'i'],
-                '5': ['j', 'k', 'l'],
-                '6': ['m', 'n', 'o'],
-                '7': ['p', 'q', 'r', 's'],
-                '8': ['t', 'u', 'v'],
-                '9': ['w', 'x', 'y', 'z']}
-        self.backtrack(digits, 0, "", nums, ans)
+def letterCombinations(digits: str):
+    ans = []
+    if not digits:
         return ans
+    nums = {'2': ['a', 'b', 'c'],
+            '3': ['d', 'e', 'f'],
+            '4': ['g', 'h', 'i'],
+            '5': ['j', 'k', 'l'],
+            '6': ['m', 'n', 'o'],
+            '7': ['p', 'q', 'r', 's'],
+            '8': ['t', 'u', 'v'],
+            '9': ['w', 'x', 'y', 'z']}
+    backtrack(digits, 0, "", nums, ans)
+    return ans
 
-    def backtrack(self, digits, index, currString, nums, ans):
-        if index == len(digits):
-            ans.append(currString)
-        else:
-            for char in nums[digits[index]]:
-                if index < len(digits):
-                    self.backtrack(digits, index + 1,
-                                   currString + char, nums, ans)
+
+def backtrack(digits, index, currString, nums, ans):
+    if index == len(digits):
+        ans.append(currString)
+    else:
+        for char in nums[digits[index]]:
+            if index < len(digits):
+                backtrack(digits, index + 1,
+                          currString + char, nums, ans)
 
 
 print(letterCombinations("23"))
