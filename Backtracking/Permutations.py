@@ -1,23 +1,23 @@
 # Given a collection of distinct integers, return all possible permutations.
 
 
-class Solution(object):
-    def permute(self, nums):
-        """
-        :type nums: List[int]
-        :rtype: List[List[int]]
-        """
-        res = []
-        self.backtrack(nums, [], res)
-        return res
+def permute(nums):
+    """
+    :type nums: List[int]
+    :rtype: List[List[int]]
+    """
+    res = []
+    backtrack(nums, [], res)
+    return res
 
-    def backtrack(self, nums, permutations, res):
-        if not nums:
-            res.append(permutations)
-        else:
-            for i in xrange(len(nums)):
-                self.backtrack(nums[:i] + nums[i+1:],
-                               permutations + [nums[i]], res)
+
+def backtrack(nums, permutations, res):
+    if not nums:
+        res.append(permutations)
+    else:
+        for i in range(len(nums)):
+            backtrack(nums[:i] + nums[i+1:],
+                      permutations + [nums[i]], res)
 
 
 print(permute([]))
