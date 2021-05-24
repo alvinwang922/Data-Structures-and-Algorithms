@@ -5,19 +5,19 @@ Note: The solution set must not contain duplicate subsets.
 """
 
 
-class Solution:
-    def subsetsWithDup(self, nums: List[int]):
-        res = []
-        nums.sort()
-        self.backtrack(nums, [], res)
-        return res
+def subsetsWithDup(nums: List[int]):
+    res = []
+    nums.sort()
+    backtrack(nums, [], res)
+    return res
 
-    def backtrack(self, nums, subset, res):
-        res.append(subset)
-        for i in range(len(nums)):
-            if i > 0 and nums[i] == nums[i-1]:
-                continue
-            self.backtrack(nums[i+1:], subset + [nums[i]], res)
+
+def backtrack(nums, subset, res):
+    res.append(subset)
+    for i in range(len(nums)):
+        if i > 0 and nums[i] == nums[i-1]:
+            continue
+        backtrack(nums[i+1:], subset + [nums[i]], res)
 
 
 print(subsetsWithDup([1, 2, 2]))
