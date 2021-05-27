@@ -5,16 +5,16 @@ Note: The solution set must not contain duplicate subsets.
 """
 
 
-class Solution:
-    def subsets(self, nums: List[int]) -> List[List[int]]:
-        res = []
-        self.backtrack(nums, [], res)
-        return res
+def subsets(nums: List[int]):
+    res = []
+    backtrack(nums, [], res)
+    return res
 
-    def backtrack(self, nums, subset, res):
-        res.append(subset)
-        for i in range(len(nums)):
-            self.backtrack(nums[i+1:], subset + [nums[i]], res)
+
+def backtrack(nums, subset, res):
+    res.append(subset)
+    for i in range(len(nums)):
+        backtrack(nums[i+1:], subset + [nums[i]], res)
 
 
 print(subsets([]))
