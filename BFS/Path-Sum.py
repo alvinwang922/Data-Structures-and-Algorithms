@@ -5,19 +5,18 @@ Note: A leaf is a node with no children.
 """
 
 
-class Solution(object):
-    def hasPathSum(self, root, sum):
-        """
-        :type root: TreeNode
-        :type sum: int
-        :rtype: bool
-        """
-        if root == None:
-            return False
-        elif root.left == None and root.right == None and sum == root.val:
-            return True
-        return self.hasPathSum(root.left, sum - root.val) \
-            or self.hasPathSum(root.right, sum - root.val)
+def hasPathSum(root, sum):
+    """
+    :type root: TreeNode
+    :type sum: int
+    :rtype: bool
+    """
+    if root == None:
+        return False
+    elif root.left == None and root.right == None and sum == root.val:
+        return True
+    return hasPathSum(root.left, sum - root.val) \
+        or hasPathSum(root.right, sum - root.val)
 
 
 print(hasPathSum([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1], 22))
