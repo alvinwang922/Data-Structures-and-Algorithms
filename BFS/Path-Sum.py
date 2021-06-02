@@ -19,7 +19,7 @@ def hasPathSum(root, sum):
         or hasPathSum(root.right, sum - root.val)
 
 
-print(hasPathSum([5, 4, 8, 11, null, 13, 4, 7, 2, null, null, null, 1], 22))
+print(hasPathSum([5, 4, 8, 11, None, 13, 4, 7, 2, None, None, None, 1], 22))
 print(hasPathSum([], 0))
-print(hasPathSum([2, 3, 4, 10, null, 6, 4, 8, 5, null, 0, 1, 2], 35))
+print(hasPathSum([2, 3, 4, 10, None, 6, 4, 8, 5, None, 0, 1, 2], 35))
 print("The booleans above should be True, False, and False.")
