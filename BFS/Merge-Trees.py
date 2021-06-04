@@ -30,11 +30,11 @@ def mergeTrees(self, t1, t2):
         return t1 or t2
 
 
-print(mergeTrees([1, 3, 2, 5], [2, 1, 3, null, 4, null, 7]))
-print(mergeTrees([9, -1, null, -2, 0, -4, null, null, 8, -5, -3, 6,
-                  null, null, null, null, null, null, 7],
-                 [-1, -2, 0, null, null, null, 8, 6, null, null, 7]))
+print(mergeTrees([1, 3, 2, 5], [2, 1, 3, None, 4, None, 7]))
+print(mergeTrees([9, -1, None, -2, 0, -4, None, None, 8, -5, -3, 6,
+                  None, None, None, None, None, None, 7],
+                 [-1, -2, 0, None, None, None, 8, 6, None, None, 7]))
 print(mergeTrees([1], []))
-print("The trees above should be [3,4,5,5,4,null,7], \
-    [8,-3,0,-2,0,null,8,-4,null,null,8,6,null,-5,-3,6,null,\
-        null,7,null,null,null,null,null,7], and [1].")
+print("The trees above should be [3,4,5,5,4,None,7], \
+    [8,-3,0,-2,0,None,8,-4,None,None,8,6,None,-5,-3,6,None,\
+        None,7,None,None,None,None,None,7], and [1].")
