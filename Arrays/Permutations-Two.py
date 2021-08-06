@@ -1,10 +1,10 @@
 """
-Given a collection of numbers, nums, that might contain duplicates, return all 
-possible unique permutations in any order.
+Given a collection of numbers, nums, that might contain duplicates, 
+return all possible unique permutations in any order.
 """
 
 
-def permuteUnique(self, nums):
+def permuteUnique(nums):
     permutations = [[]]
     for first in nums:
         permutations = [rest[:i]+[first]+rest[i:] for rest in permutations
